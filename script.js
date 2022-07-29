@@ -1,28 +1,22 @@
-const add = function(x,y) {
-	return x+y
-};
+const add = (x,y) => x+y
+const subtract =(x,y) => x-y
+const divide = (x,y) => x/y
+const multiply =(x,y) => x*y
 
-const subtract = function(x,y) {
-	return x-y
-};
-
-const sum = function(array) {
-	result = 0
-  for (const i of array) {
-    result+=i
-  }
-  return result
+const operate = function(operator,x,y) {
+    if(operator === "+"){
+        return add(x,y)
+    }
+    if(operator === "-"){
+        return subtract(x,y)
+    }
+    if(operator === "*"){
+        return multiply(x,y)
+    }
+    if(operator === "/"){
+        return divide(x,y)
+    }
 }
-  
-
-
-const multiply = function(array) {
-  result = 1
-  for (const i of array) {
-    result*=i
-  }
-  return result
-};
 
 const power = function(b,e) {
 	return b ** e
@@ -36,3 +30,8 @@ const factorial = function(number) {
     return number * factorial(number -1)
   }
 };
+
+const display = document.getElementsByClassName("display")
+const buttons = document.querySelectorAll("button")
+
+buttons.forEach()
