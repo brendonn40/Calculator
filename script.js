@@ -1,7 +1,7 @@
 const add = (x,y) => x+y
 const subtract =(x,y) => x-y
 const divide = (x,y) => x/y
-const multiply =(x,y) => x*y
+const mdivtiply =(x,y) => x*y
 
 const operate = function(operator,x,y) {
     if(operator === "+"){
@@ -11,7 +11,7 @@ const operate = function(operator,x,y) {
         return subtract(x,y)
     }
     if(operator === "*"){
-        return multiply(x,y)
+        return mdivtiply(x,y)
     }
     if(operator === "/"){
         return divide(x,y)
@@ -31,7 +31,21 @@ const factorial = function(number) {
   }
 };
 
-const display = document.getElementsByClassName("display")
+const display = document.getElementById("display")
 const buttons = document.querySelectorAll("button")
 
-buttons.forEach()
+
+createListeners()
+
+function createListeners(){
+    buttons.forEach((button) => {
+        button.addEventListener("click",function(e){
+            e.stopPropagation()
+            putThingsDisplay(button.id)
+        })
+    })
+}
+
+function putThingsDisplay(buttonId){
+    display.innerText+=buttonId
+}

@@ -3,17 +3,15 @@
     margin:0px;
     box-sizing: border-box;
 }
-ul{
-    list-style: none;
-    display: flex;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
+
 li{
     font-size: large;
 }
-.display{
-    background-color: beige;
+#display{
+    background-color: buttonface;
     width: 105px;
     height: 30px;
+}
+.first,.second,.third,.fourth,.fifth{
+    display: flex;
 }
