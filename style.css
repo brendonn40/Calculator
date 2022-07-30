@@ -9,9 +9,20 @@ li{
 }
 #display{
     background-color: buttonface;
-    width: 105px;
+    width: 150px;
     height: 30px;
+    display: flex;
+    justify-content: flex-end;
 }
 .first,.second,.third,.fourth,.fifth{
     display: flex;
+}
+.calculator{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+button{
+    width: 37.5px;
+    height: 30px;
 }
