@@ -13,13 +13,20 @@ function createListeners(){
     buttons.forEach((button) => {
         button.addEventListener("click",function(e){
             e.stopPropagation()
-            divideOperations(button)
-            if(operator === "="){
-                operator= ""
+            if(button.id === "clear"){
+                display.innerText=""
+                number1 = null
+                number2 = null
+                operator = ""
+
             }else{
-                putThingsDisplay(button.id)
+                divideOperations(button)
+                if(operator === "="){
+                    operator= ""
+                }else{
+                    putThingsDisplay(button.id)
+                }
             }
-            
             
         })
     })
@@ -33,8 +40,11 @@ function divideOperations(button){
         if(number1 === null){
             number1 = parseInt(display.textContent)
             operator= button.id
+    }else if(parseInt(display.textContent.split(operator)[1]) !== 0 && operator !== ""){
+            number2 = parseInt(display.textContent.split(operator)[1])
     }else{
-        number2 = parseInt(display.textContent.split(operator)[1])
+        number2 = null
+        operator=button.id
     }
     }
     if(number2 !== null){
